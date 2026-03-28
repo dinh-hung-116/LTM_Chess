@@ -1,0 +1,30 @@
+CREATE TABLE user (
+user_id INTEGER PRIMARY KEY,
+user_name text,
+password_hash text,
+full_name text,
+gender text,
+date_of_birth date
+);
+CREATE TABLE match (
+match_id integer primary key,
+white_player_id integer,
+black_player_id integer,
+result text,
+start_time datetime,
+end_time datetime
+);
+CREATE TABLE IF NOT EXISTS "user_stats" (
+user_id integer primary key,
+total_games integer,
+wins integer,
+losses integer,
+draws integer,
+winning_streak integer,
+losing_streak integer,
+elo integer,
+win_rate real,
+constraint fk_user_stats_user foreign key (user_id) references user(user_id)
+);
+
+skibidi
