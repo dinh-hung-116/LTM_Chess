@@ -1,0 +1,3 @@
+- Folder này chứa các thư viện để chạy chương trình
+
+- Folder "SQLite" chứa file zip thư viện SQLite
