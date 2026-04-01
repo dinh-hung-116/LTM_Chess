@@ -64,6 +64,7 @@ public abstract class Player {
         return this.isInCheck && !hasEscapeMoves();
     }
     // check cac dieu kien trong game
+
     public boolean isInStalemate() {
         return !this.isInCheck && !hasEscapeMoves();
     }
@@ -79,7 +80,7 @@ public abstract class Player {
     }
 
 
-
+    //Chua code method nay
     public boolean isCastle() {
         return false;
     }
