@@ -25,7 +25,25 @@ public abstract class Move {
 
         @Override
         public Board execute() {
-            return null;
+
+            @SuppressWarnings("unused")
+            //Tạo builder để dựng bàn cờ mới
+            final Board.Builder builder = new Board.Builder();
+            //duyệt quân của người chơi hiện tại
+            for(final Piece piece : this.board.currentPlayer().getActivePieces()){
+                if(!this.movedPiece.equals(piece)){
+                    builder.setPiece(piece);
+                }
+            }
+            //duyệt quân đối thủ
+            for(final Piece piece: this.board.currentPlayer().getOpponent().getActivePieces()){
+                builder.setPiece(piece);
+            }
+            builder.setPiece(null);
+            //set lượt chơi
+            builder.setMoveMaker(this.board.currentPlayer().getAlliance());
+
+            return builder.build();
         }
     }
 
