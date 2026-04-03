@@ -1,0 +1,6 @@
+{
+  "java.project.referencedLibraries": [
+    "src/com/chess/external_lib/**/*.jar"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic"
+}
