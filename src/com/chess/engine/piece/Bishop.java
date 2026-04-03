@@ -63,4 +63,10 @@ public class Bishop extends Piece{
     private static boolean isEighthColumnExclusion(final int currentPosition, final int candidateOffset) {
         return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == -7 || candidateOffset == 9);
     }
+
+    //Tạo ra một quân Bishop(tượng) mới sau khi thực hiện nước đi
+    @Override
+    public Bishop movPiece(final Move move) {
+        return new Bishop(move.getDestinationCoordinate(), move.getMovPiece().getPieceAlliance());
+    }
 }

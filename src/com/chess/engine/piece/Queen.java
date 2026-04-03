@@ -50,7 +50,10 @@ public class Queen extends Piece{
 
         return ImmutableList.copyOf(legalMoves);
     }
-
+        @Override
+    public Queen movPiece(final Move move) {
+        return new Queen(move.getDestinationCoordinate(), move.getMovPiece().getPieceAlliance());
+    }
     @Override
     public String toString() {
         return PieceType.QUEEN.toString();

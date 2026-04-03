@@ -15,7 +15,10 @@ public abstract class Move {
     public int getDestinationCoordinate() {
         return this.destinationCoordinate;
     }
-
+    // lấy dữ liệu 
+    public Piece getMovPiece(){
+        return this.movedPiece;
+    }
     public abstract Board execute();
 
     public static final class NormalMove extends Move {
@@ -39,7 +42,7 @@ public abstract class Move {
             for(final Piece piece: this.board.currentPlayer().getOpponent().getActivePieces()){
                 builder.setPiece(piece);
             }
-            builder.setPiece(null);
+            builder.setPiece(this.movedPiece.movPiece(this));
             // đổi lượt chơi
             builder.setMoveMaker(this.board.currentPlayer().getAlliance());
 

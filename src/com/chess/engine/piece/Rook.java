@@ -50,7 +50,10 @@ public class Rook extends Piece{
 
         return ImmutableList.copyOf(legalMoves);
     }
-
+        @Override
+    public Piece movPiece(final Move move) {
+        return new Rook(move.getDestinationCoordinate(), move.getMovPiece().getPieceAlliance());
+    }
     @Override
     public String toString() {
         return PieceType.ROOK.toString();
