@@ -29,7 +29,7 @@ public abstract class Move {
             @SuppressWarnings("unused")
             //Tạo builder để dựng bàn cờ mới
             final Board.Builder builder = new Board.Builder();
-            //duyệt quân của người chơi hiện tại
+            // giữ lại quân của current player (trừ quân di chuyển)
             for(final Piece piece : this.board.currentPlayer().getActivePieces()){
                 if(!this.movedPiece.equals(piece)){
                     builder.setPiece(piece);
@@ -40,7 +40,7 @@ public abstract class Move {
                 builder.setPiece(piece);
             }
             builder.setPiece(null);
-            //set lượt chơi
+            // đổi lượt chơi
             builder.setMoveMaker(this.board.currentPlayer().getAlliance());
 
             return builder.build();
